@@ -4,6 +4,9 @@ A date-picker in React, comprised of functional components, and using [React Hoo
 
 Because I don't like the other date-pickers I've seen.
 
+----
+[Code Sandbox](https://codesandbox.io/s/reactsetstate-xw1kw)
+
 React SetDate returns a standard JavaScript Date object; do as you like with it.
 
 Use `SetDate` to display the picker on the page, or include the picker in a wrapper component.
