@@ -4,6 +4,12 @@ A date-picker in React, comprised of functional components, and using [React Hoo
 
 Because I don't like the other date-pickers I've seen.
 
+React SetDate returns a standard JavaScript Date object; do as you like with it.
+
+Use `SetDate` to display the picker on the page, or include the picker in a wrapper component.
+
+Use `InputDate` to display an input that opens the date-picker on focus.
+
 ```js
 import { InputDate, SetDate } from './SetDate'
 
@@ -24,9 +30,39 @@ const App = (props) => {
 
   return (
     <SetDate
-      date={date}
-      setDate={setDate}
+      date={date} // optional
+      setDate={setDate} // required
+      timeFormat="hh" // h, hh, H, HH (optional; HH by default)
     />
   )
+}
+```
+
+```js
+import { InputDate, SetDate } from './SetDate'
+
+class App extends React.Component {
+  state = {
+    date: new Date(),
+  }
+
+  // provide a handler that does something with the date
+  handleSetDate = (date) => {
+    this.setState({
+      date,
+    }, () => {
+      console.log(date)
+    })
+  }
+
+  render() {
+    return (
+      <SetDate
+        date={date} // optional
+        setDate={handleSetDate} // required
+        timeFormat="hh" // h, hh, H, HH (optional; HH by default)
+      />
+    )
+  }
 }
 ```
