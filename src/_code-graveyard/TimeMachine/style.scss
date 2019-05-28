@@ -1,0 +1,319 @@
+$background: #fff;
+$color: #666;
+$accent: rgba(246, 191, 38, 1);
+$highlight: rgba(254, 247, 229, 1);
+$fontSize: 14px;
+
+.component-time-machine {
+	background-color: $background;
+	border: 1px solid $accent;
+	box-sizing: content-box;
+	color: $color;
+	font-size: $fontSize;
+	height: auto;
+	margin: 0 0 12px;
+	width: calc(44px * 7);
+
+	ul {
+		font-size: 0;
+		margin: 0;
+		padding: 0;
+
+		li {
+			box-sizing: border-box;
+			display: inline-block;
+			font-size: $fontSize;
+			line-height: 44px;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			user-select: none;
+			vertical-align: top;
+			width: 44px;
+
+			&.current {
+				&::after {
+					border: 5px solid transparent;
+					border-right-color: $accent;
+					border-bottom-color: $accent;
+					content: "";
+					display: block;
+					height: 0;
+					position: absolute;
+						right: 0;
+						bottom: 0;
+					width: 0;
+				}
+
+				button {
+					border-bottom: 1px solid $accent;
+				}
+			}
+
+			&.selected {
+				background-color: $highlight;
+			}
+
+			button {
+				background-color: transparent;
+				border: 0 solid transparent;
+				border-width: 1px 0;
+				cursor: pointer;
+				display: block;
+				height: 100%;
+				line-height: 42px;
+				outline: none;
+				width: 100%;
+
+				&:hover {
+					background-color: $highlight;
+				}
+			}
+		}
+	}
+
+	header {
+		border-bottom: 1px solid $highlight;
+
+		ul {
+			display: flex;
+
+			li {
+				flex: 1 0 auto;
+				font-weight: bold;
+
+				&.prev, &.next {
+					flex: 0 0 44px;
+				}
+
+				button {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	main {
+		ul.days-of-the-week {
+			border-bottom: 1px solid $highlight;
+			font-size: 0;
+
+			li {
+				line-height: 28px;
+			}
+		}
+
+		ul.dates {
+			li {
+				&.not-current-month {
+					button {
+						color: #ededed;
+					}
+				}	
+			}
+		}
+
+		ul.months {
+			line-height: 2;
+
+			li {
+				width: 77px;
+			}
+		}
+
+		ul.years {
+			line-height: 2;
+
+			li {
+				width: 33.333333%;
+			}
+		}
+
+		ul.time {
+			display: flex;
+			justify-content: center;
+
+			li {
+				color: #333;
+				font-size: 24px;
+
+				&.clockColon {
+					width: auto;
+				}
+
+				&.meridiem {
+					width: auto;
+				}
+			}
+		}
+
+		ul.timeSliders {
+			display: block;
+			width: 100%;
+	
+			li {
+				border-top: 1px solid $highlight;
+				display: flex;
+				width: 100%;
+
+				label {
+					flex: 0 0 25%;
+					margin-right: 10px;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+
+	footer {
+		border-top: 1px solid $highlight;
+
+		ul {
+			display: flex;
+
+			li {
+				flex: 1 0 auto;
+			}
+		}
+	}
+}
+
+.component-time-machine {
+	main {
+		ul.timeSliders {
+			input[type="range"] {
+				background: transparent; /* Otherwise white in Chrome */
+				width: 100%; /* Specific width is required for Firefox. */
+				-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+			}
+
+			input[type="range"]::-webkit-slider-thumb {
+				-webkit-appearance: none;
+			}
+
+			input[type="range"]:focus {
+				outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+			}
+
+			input[type="range"] {
+				border: none;
+				margin: 0;
+				padding: 0;
+				width: 192px;
+			}
+
+			input[type="range"]::-ms-track {
+				cursor: pointer;
+				width: 100%;
+
+				/* Hides the slider so custom styles can be added */
+				background: transparent; 
+				border-color: transparent;
+				color: transparent;
+			}
+
+			input[type="range"]::-webkit-slider-runnable-track {
+				background: #eeeeee;
+				border: none;
+				border-radius: 6px;
+				box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+				cursor: pointer;
+				width: 100%; height: 12px;
+			}
+
+			input[type="range"]::-moz-range-track {
+				background: #eeeeee;
+				border: none;
+				border-radius: 6px;
+				box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+				cursor: pointer;
+				width: 100%; height: 12px;
+			}
+
+			input[type="range"]::-ms-track {
+				background: #eeeeee;
+				border: none;
+				border-radius: 6px;
+				box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+				color: transparent;
+				cursor: pointer;
+				width: 100%; height: 12px;
+			}
+			input[type="range"]::-ms-fill-lower {
+				background: #eeeeee;
+				border: none;
+				border-radius: 6px;
+			}
+			input[type="range"]::-ms-fill-upper {
+				background: #eeeeee;
+				border: none;
+				border-radius: 6px;
+			}
+
+			/* Special styling for WebKit/Blink */
+			input[type="range"]::-webkit-slider-thumb {
+				background: #333333;
+				border: 2px solid #000000;
+				border-radius: 50%;
+				cursor: pointer;
+				margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+				width: 12px; height: 12px;
+				-webkit-appearance: none;
+			}
+			input[type="range"]:focus::-webkit-slider-thumb {
+				background: $accent;
+				border-color: $accent;
+			}
+
+			/* All the same stuff for Firefox */
+			input[type="range"]::-moz-range-thumb {
+				background: #333333;
+				border: 2px solid #000000;
+				border-radius: 50%;
+				cursor: pointer;
+				width: 12px; height: 12px;
+			}
+			input[type="range"]:focus::-moz-range-thumb {
+				background: $accent;
+				border-color: $accent;
+			}
+
+			/* All the same stuff for IE */
+			input[type="range"]::-ms-thumb {
+				background: #333333;
+				border: 2px solid #000000;
+				border-radius: 50%;
+				cursor: pointer;
+				width: 12px; height: 12px;
+			}
+			input[type="range"]:focus::-ms-thumb {
+				background: $accent;
+				border-color: $accent;
+			}
+
+			input[type="range"],
+			input.range, 
+			input.range ~ span.unit {
+				display: inline-block;
+				margin: 0 6px 0 0;
+				vertical-align: middle;
+			}
+
+			input.range {
+				font-size: 0.875rem;
+				line-height: 1.5rem;
+				padding: 0 0 0 15px;
+				text-align: center;
+				width: 64px;
+			}
+
+			input.range ~ span.unit {
+				font-size: 0.75rem;
+				line-height: 1.125rem;
+			}
+		}
+	}
+}

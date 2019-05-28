@@ -1,0 +1,220 @@
+.component-calendar {
+	background-color: #fff;
+	border: 1px solid rgb(246, 191, 38);
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	color: #666;
+	display: inline-block;
+	padding: 0;
+	// position: absolute;
+	// top: 31px;
+	vertical-align: top;
+	width: calc(44px * 7);
+
+	ul {
+		font-size: 0;
+		margin: 0;
+		// max-width: calc(44px * 7);
+		padding: 0;
+
+		li {
+			display: inline-block;
+			font-size: 14px;
+			list-style: none;
+			position: relative;
+			text-align: center;
+			user-select: none;
+
+			&.selected {
+				background: linear-gradient(
+					135deg,
+					 rgba(254, 247, 229, 1) 20%,
+					 rgba(246, 191, 38, 0.65) 100%,
+				);
+				color: #333;
+			}
+
+			&.today {
+				&::after{
+					border: 6px solid transparent;
+					border-right-color: rgb(246, 191, 38);
+					border-bottom-color: rgb(246, 191, 38);
+					content: "";
+					display: block;
+					height: 0;
+					position: absolute;
+						right: 0;
+						bottom: 0;
+					width: 0;
+				}
+			}
+		}
+	}
+
+	ul.calendar-head {
+		border: 0 solid rgb(254, 247, 229);
+		border-width: 0 0 1px;
+		display: flex;
+		line-height: 44px;
+
+		li {
+			flex: 1 0 auto;
+
+			&.prev {
+				align-self: flex-start;
+			}
+
+			&.next {
+				align-self: flex-end;
+			}
+
+			&.prev,
+			&.next {
+				max-width: 44px;
+				min-width: 44px;
+			}
+
+			button {
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				display: block;
+				font-weight: bold;
+				line-height: inherit;
+				margin: 0;
+				outline: none;
+				width: 100%;
+
+				&:hover {
+					background-color: rgb(254, 247, 229);
+				}
+			}
+		}
+	}
+
+	ul.calendar-days {
+		border: 0 solid rgb(254, 247, 229);
+		border-width: 0 0 1px;
+		display: flex;
+		line-height: 2;
+
+		li {
+			flex: 0 0 auto;
+			user-select: none;
+			width: 44px;
+		}
+	}
+
+	ul.calendar-dates {
+		line-height: 2;
+
+		li {
+			cursor: pointer;
+			height: 44px;
+			line-height: 44px;
+			width: 44px;
+
+			&.not-this-month {
+				color: #ededed;
+			}
+
+			&:hover {
+				background-color: rgb(254, 247, 229);
+				color: #666;
+			}
+		}
+	}
+
+	ul.calendar-months {
+		line-height: 2;
+
+		li {
+			cursor: pointer;
+			height: 44px;
+			line-height: 44px;
+			width: 77px;
+
+			&:hover {
+				background-color: rgb(254, 247, 229);
+				color: #666;
+			}
+		}
+	}
+
+	ul.calendar-years {
+		line-height: 2;
+
+		li {
+			cursor: pointer;
+			height: 44px;
+			line-height: 44px;
+			width: 33.333333%;
+
+			&:hover {
+				background-color: rgb(254, 247, 229);
+				color: #666;
+			}
+		}
+	}
+
+	ul.calendar-time {
+		line-height: 2;
+
+		li {
+			height: 44px;
+			line-height: 44px;
+			width: 100%;
+
+			li {
+				font-size: 20px;
+				width: 44px;
+			}
+
+			ul.adjust-time {
+				margin: 0;
+				padding: 0;
+
+				li {
+					cursor: pointer;
+					display: inline-block;
+					font-size: 14px;
+					font-weight: bold;
+					vertical-align: top;
+					width: 44px;
+
+					&:hover {
+						background-color: rgb(254, 247, 229);
+						color: #666;
+					}
+				}
+			}
+		}
+	}
+
+	ul.calendar-foot {
+		border: 0 solid rgb(254, 247, 229);
+		border-width: 1px 0 0;
+		display: flex;
+		line-height: 44px;
+
+		li {
+			flex: 1 0 auto;
+
+			button {
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				display: block;
+				font-weight: bold;
+				line-height: inherit;
+				margin: 0;
+				outline: none;
+				width: 100%;
+
+				&:hover {
+					background-color: rgb(254, 247, 229);
+				}
+			}
+		}
+	}
+}

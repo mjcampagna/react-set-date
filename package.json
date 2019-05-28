@@ -1,0 +1,26 @@
+{
+  "name": "react-set-date",
+  "version": "1.0.0",
+  "description": "A date picker for React, comprised of React Hooks and date-fns.",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build ./src/index.html/",
+    "start": "parcel ./src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.0.0-alpha.27",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.12.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
