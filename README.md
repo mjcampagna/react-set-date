@@ -11,6 +11,8 @@ Use `SetDate` to display the picker on the page, or include the picker in a wrap
 Use `InputDate` to display an input that opens the date-picker on focus.
 
 ```js
+// Use in a functional component, with hooks:
+
 import { InputDate, SetDate } from './SetDate'
 
 const App = (props) => {
@@ -39,6 +41,8 @@ const App = (props) => {
 ```
 
 ```js
+// Use in a class-based component
+
 import { InputDate, SetDate } from './SetDate'
 
 class App extends React.Component {
