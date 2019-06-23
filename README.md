@@ -1,10 +1,13 @@
 # React SetDate
 
-A date-picker in React, comprised of functional components, and using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [date-fns](https://date-fns.org).
+![npm (scoped)](https://img.shields.io/npm/v/@slithyme/react-set-date.svg)
+
+React Set Date is a flat, flexible date-picker in React, built of functional components using [React Hooks](https://reactjs.org/docs/hooks-intro.html) and [date-fns](https://date-fns.org).
 
 Because I don't like the other date-pickers I've seen.
 
 ----
+
 [Code Sandbox](https://codesandbox.io/s/reactsetstate-xw1kw)
 
 React SetDate returns a standard JavaScript Date object; do as you like with it.

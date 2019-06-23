@@ -1,7 +1,8 @@
 {
-  "name": "react-set-date",
-  "version": "1.0.0",
+  "name": "@slithyme/react-set-date",
+  "version": "1.0.1",
   "description": "A date picker for React, comprised of React Hooks and date-fns.",
+  "repository": "mjcampagna/react-set-date",
   "main": "index.js",
   "scripts": {
     "build": "parcel build ./src/index.html/",
